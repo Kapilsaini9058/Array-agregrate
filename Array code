@@ -1,0 +1,16 @@
+#include <stdio.h>
+#include <string.h>
+
+int
+main(int argc, char* argv[]) {
+  char *a[] = {"I", "LOVE", "C", "PROGRAMMING", NULL}; 
+  char buf[1024] = {0}, **p = a;
+  while (*p) {
+    strcat(buf, *p);
+    if (*p && *(p + 1))
+      strcat(buf, " ");
+    p++;
+  }
+  printf("[%s]\n", buf);
+  return 0;
+}
